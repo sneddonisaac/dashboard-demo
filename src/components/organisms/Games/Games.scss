@@ -1,0 +1,24 @@
+.app__games {
+    width: 100%;
+    height: 100%;
+
+    .app__games-card-grid {
+        width: 100%;
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+
+        .app__games-card {
+
+            width: 200px;
+            height: 500px;
+        }
+
+        .app__games-card-img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+        }
+    }
+}

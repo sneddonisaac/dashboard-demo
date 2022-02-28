@@ -1,0 +1,24 @@
+.app__news {
+    width: 100%;
+    height: 100%;
+
+    .app__news-card-grid {
+        width: 100%;
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+
+        .app__news-card {
+
+            width: 200px;
+            height: 500px;
+        }
+
+        .app__news-card-img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+        }
+    }
+}

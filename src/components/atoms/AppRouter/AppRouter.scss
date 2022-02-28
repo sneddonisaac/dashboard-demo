@@ -1,0 +1,133 @@
+.app__router {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  background-color: var(--lightmode-primary-color);
+}
+
+.app__sidenav {
+  width: 20%;
+  height: 100%;
+  padding: 1rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  .app__sidenav-logo {
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .app__sidenav-logo-icon {
+      height: 40px;
+      width: 40px;
+    }
+
+    span {
+      font-size: 1.2rem;
+      margin-left: 0.8rem;
+    }
+  }
+
+  .app__sidenav-links {
+    list-style: none;
+    padding-left: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .app__sidenav-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.7rem 0;
+
+    .app__sidenav-link-icon {
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  .app__sidenav-account {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    button {
+      height: 25px;
+      width: 25px;
+      border: 0;
+      margin-top: 0.5rem;
+      background-color: transparent;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+
+  .app__sidenav-profile {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 2px solid var(--lightmode-secondary-color);
+
+    .app__sidenav-profile-i {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .icon {
+        width: 80%;
+        height: 80%;
+      }
+
+      img {
+        object-fit: cover;
+      }
+    }
+
+    .app__sidenav-profile-text {
+      font-size: 0.5rem;
+      text-align: center;
+      margin-top: -1rem;
+      padding: 0;
+    }
+  }
+  .app__sidenav-bottom {
+    padding: 1rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+
+    .app__sidenav-signout {
+      border: 0;
+      background-color: transparent;
+      color: black;
+      cursor: pointer;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+
+.btn-icon {
+  width: 32px;
+  height: 32px;
+}

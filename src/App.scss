@@ -1,0 +1,13 @@
+.app__login {
+    height: 100vh;
+    width: 100vw;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.app__login-heading {
+    font-size: 3rem;
+    font-weight: 600;
+}

@@ -1,0 +1,43 @@
+.app__auth {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .app__auth-form {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 70%;
+        height: 70%;
+
+        .app__auth-header {
+
+        }
+
+        .app__auth-description {
+
+        }
+        
+        .app__auth-input {
+            width: 50%;
+            margin: 1rem 0;
+            padding: 1rem;
+            border: 2px solid var(--lightmode-secondary-color);
+        }
+
+        .app__auth-button {
+            padding: 1rem 2rem;
+            border: 2px solid var(--lightmode-secondary-color);
+            background-color: transparent;
+            transition: all 0.3s ease-in-out;
+
+            &:hover {
+                background-color: var(--lightmode-secondary-color);
+                color: var(--lightmode-primary-color);
+            }
+        }
+    }
+}

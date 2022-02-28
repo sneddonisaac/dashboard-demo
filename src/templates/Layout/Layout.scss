@@ -1,0 +1,72 @@
+.app__layout {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  .app__layout-topbar {
+    height: fit-content;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .app__layout-topbar-searchbar {
+      display: flex;
+      position: relative;
+      width: 40%;
+
+      .searchbar__input {
+        width: 100%;
+        height: 40px;
+        border-radius: 0;
+        border: 1px solid var(--lightmode-secondary-color);
+        padding-left: 1rem;
+        background-color: transparent;
+      }
+
+      .searchbar__btn {
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        border: 0;
+        padding: 0.5rem;
+        background-color: transparent;
+        border-left: 1px solid var(--lightmode-secondary-color);
+        &:hover {
+          background-color: var(--lightmode-secondary-color);
+          color: var(--lightmode-primary-color);
+        }
+      }
+    }
+
+    .app__layout-topbar-signout {
+      border: 0;
+      background-color: transparent;
+      color: black;
+    }
+  }
+
+  .app__layout-component-wrapper {
+    padding: 1rem;
+    height: 100%;
+    overflow: scroll;
+
+    .app__layout-component {
+      margin: 0 1rem 1rem 0;
+      padding: 2rem;
+      height: 100%;
+      width: 100%;
+      overflow: scroll;
+      border-top-left-radius: 3rem;
+      box-shadow: -5px 5px 30px -5px rgba(158, 158, 158, 0.8);
+      background-color: white;
+    }
+  }
+
+  .btn-icon {
+    width: 25px;
+    height: 25px;
+  }
+}

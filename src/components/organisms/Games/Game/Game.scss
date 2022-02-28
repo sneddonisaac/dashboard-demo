@@ -1,0 +1,41 @@
+.app__game {
+    width: 100%;
+    height: 100%;
+
+    .app__game-card {
+        margin: 1rem 0;
+        padding: 1rem;
+        border: 2px solid var(--lightmode-secondary-color);
+        display: grid;
+        grid-template-columns: 2fr 0.25fr 1fr;
+        grid-template-rows: 2fr 0.25fr;
+
+        .app__game-card-left {
+            display: grid;
+            grid-template-columns: 0.25fr 1fr;
+            padding-right: 1rem;
+            
+            img {
+                height: 100%;
+                width: 90%;
+                object-fit: cover;
+            }
+
+        }
+
+        .app__game-card-right {
+
+        }
+
+        .app__game-card-tabmenu {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            
+            h4 {
+                border-right: 1px solid var(--lightmode-secondary-color);
+                padding: 1rem;
+            }
+        }
+    }
+}
