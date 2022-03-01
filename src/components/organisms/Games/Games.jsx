@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import Layout from "../../../templates/Layout/Layout";
+import { motion } from "framer-motion";
 
-import './Games.scss'
+import Layout from "../../../templates/Layout/Layout";
+import Header from "../../atoms/Header/Header";
+
+import "./Games.scss";
 
 function Games() {
   const [data, setData] = useState(null);
@@ -24,44 +27,47 @@ function Games() {
         console.error(`Game Data Error: ${error}`);
       }
     }
-
-    
-
     gameData();
   }, []);
 
-  /* function makeSlug(data) {
-    const title = data?.title;
-    const titleOtherCharacters = title.replace(/[^a-zA-Z, s]+/g, '').trim();
-    const titleWithoutSpaces = titleOtherCharacters.replace(/\s+/g, '-');
-    const result = titleWithoutSpaces.toLowerCase();
-    return result;
-  } */
-
-  console.log(data?.slice(0, 30));
-
   return (
     <div className="app__games">
+      <Header
+        title="Games"
+      />
       <div className="app__games-card-grid">
-        {data?.slice(0, 30).map((item) => {
-          /* const slug = makeSlug(item); */
+        {data?.slice(0.92).map((item) => {
           return (
-          <div key={item.id} className="app__games-card">
-            <Link to={`/games/${item.id}`}>
-            <img
-              src={item.thumbnail}
-              alt={item.title}
-              className="app__games-card-img"
-            />
-            <h2 className="app__games-card-title">{item.title}</h2>
-            <p>{item.short_description}</p>
-            <span>{item.genre}</span>
-            </Link>
-          </div>
-        )})}
+            <motion.div 
+              key={item.id} 
+              className="app__games-card"
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.3, ease: 'easeInOut' }}
+            >
+              <Link to={`/games/${item.id}`}>
+                <GameCardImg item={item} />
+                <h2 className="app__games-card-title">{item.title}</h2>
+                <p>{item.short_description}</p>
+              </Link>
+            </motion.div>
+          );
+        })}
       </div>
     </div>
   );
 }
+
+const GameCardImg = ({ item }) => {
+  return (
+    <div className="app__games-card-img-block">
+      <img
+        src={item.thumbnail}
+        alt={item.title}
+        className="app__games-card-img"
+      />
+      <span>{item.genre}</span>
+    </div>
+  );
+};
 
 export default Layout(Games);

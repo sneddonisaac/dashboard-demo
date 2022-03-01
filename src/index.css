@@ -5,10 +5,8 @@
 }
 
 :root {
-  --lightmode-primary-color: #edf2f8;
-  --lightmode-secondary-color: #030303;
-  --darkmode-primary-color: #030303;
-  --darkmode-secondary-color: #edf2f8
+  --primary-color: #f3f3f3;
+  --secondary-color: #080809;
 }
 
 html, body {

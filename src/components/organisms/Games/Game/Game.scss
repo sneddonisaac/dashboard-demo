@@ -1,41 +1,72 @@
 .app__game {
+  width: 100%;
+  height: 100%;
+
+  .app__game-card {
+    position: relative;
+    height: fit-content;
     width: 100%;
-    height: 100%;
+    margin: 1rem 0;
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 5px 5px 15px 5px rgba(8,8,9,0.3);
+    display: flex;
+    flex-direction: column;
 
-    .app__game-card {
-        margin: 1rem 0;
-        padding: 1rem;
-        border: 2px solid var(--lightmode-secondary-color);
-        display: grid;
-        grid-template-columns: 2fr 0.25fr 1fr;
-        grid-template-rows: 2fr 0.25fr;
+    .app__game-card-content {
+      display: grid;
+      grid-template-columns: 0.25fr 1fr;
+      padding-right: 1rem;
 
-        .app__game-card-left {
-            display: grid;
-            grid-template-columns: 0.25fr 1fr;
-            padding-right: 1rem;
-            
-            img {
-                height: 100%;
-                width: 90%;
-                object-fit: cover;
-            }
-
-        }
-
-        .app__game-card-right {
-
-        }
-
-        .app__game-card-tabmenu {
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            
-            h4 {
-                border-right: 1px solid var(--lightmode-secondary-color);
-                padding: 1rem;
-            }
-        }
+      img {
+        height: 100%;
+        width: 90%;
+        object-fit: cover;
+        border-radius: 12px;
+      }
     }
+
+    .app__game-card-tags {
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      top: 1rem;
+      right: 1rem;
+
+      span {
+        padding: 0.2rem 0.5rem;
+        margin: 0 0.4rem;
+        border-radius: 12px;
+        background-color: rgb(192, 192, 192);
+      }
+
+      #platform {
+        background-color: #e5e5e5;
+      }
+
+      #publisher {
+        background-color: #c4c4c4;
+      }
+
+      #genre {
+        background-color: #A4A4A4;
+      }
+    }
+
+    .app__game-card-tabmenu {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      height: fit-content;
+      width: 100%;
+      margin-top: 1rem;
+      border-top: 2px solid var(--secondary-color);
+
+      h4 {
+        border-right: 1px solid var(--secondary-color);
+        padding: 0.5rem 1rem;
+      }
+    }
+  }
 }

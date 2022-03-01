@@ -1,0 +1,35 @@
+.app__dashboard-game-grid {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  .app__card {
+    margin: 1rem 0rem;
+    width: 100%;
+
+    .app__card-block {
+      display: flex;
+      align-items: center;
+
+      .card__image-block {
+        width: fit-content;
+        height: fit-content;
+        margin-right: 1rem;
+
+        .card__image-img {
+          width: 300px;
+          border-radius: 12px;
+        }
+      }
+
+      .card__content-block {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+        align-content: flex-start;
+      }
+    }
+  }
+}

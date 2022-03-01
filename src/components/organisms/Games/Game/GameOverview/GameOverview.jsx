@@ -38,5 +38,5 @@ export default function GameOverview() {
   }, []);
 
   const game = data || [];
-  return <div>{game.description}</div>;
+  return <div style={{ paddingBottom: '1rem' }}>{game.description}</div>;
 }

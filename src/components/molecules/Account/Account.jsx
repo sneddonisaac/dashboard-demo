@@ -69,17 +69,7 @@ function Account({ session }) {
 
   return (
     <div className="app__account">
-      <Header
-        title={`Welcome ${username || ""}`}
-        action={
-          <button
-            className="app__account-signout"
-            onClick={() => supabase.auth.signOut()}
-          >
-            <LogoutIcon className="btn-icon" />
-          </button>
-        }
-      />
+      <Header title={`Welcome ${username || ""}`} />
       <div className="app__account-form">
         <div className="app__account-form-text">
           <h2>Edit Profile</h2>

@@ -1,15 +1,7 @@
 import React, { useEffect, useState } from "react";
-import {
-  Link,
-  Routes,
-  Route,
-  useParams,
-  useMatch,
-  Outlet,
-} from "react-router-dom";
+import { Link, useParams, Outlet } from "react-router-dom";
 import Layout from "../../../../templates/Layout/Layout";
 import Header from "../../../atoms/Header/Header";
-import GameOverview from "./GameOverview/GameOverview";
 
 import "./Game.scss";
 
@@ -54,20 +46,17 @@ function Game() {
     <div className="app__game">
       <Header title={game.title} action={<Link to="/games">Back</Link>} />
       <div className="app__game-card">
-        <div className="app__game-card-left">
+        <div className="app__game-card-content">
           <img src={game.thumbnail} alt="" />
           <div>
-            <h2>{game.title}</h2>
+            <h1>{game.title}</h1>
             <h4>By {game.developer}</h4>
             <p>{game.short_description}</p>
           </div>
-        </div>
-        <div
-          style={{ width: "1px", height: "100%", backgroundColor: "black" }}
-        />
-        <div className="app__game-card-right">
-          <div>
-            <span>{game.genre}</span>
+          <div className="app__game-card-tags">
+            <span id="platform">{game.platform}</span>
+            <span id="publisher">{game.publisher}</span>
+            <span id="genre">{game.genre}</span>
           </div>
         </div>
         <div className="app__game-card-tabmenu">
@@ -77,8 +66,6 @@ function Game() {
           <Link to="screenshots">
             <h4>Screenshots</h4>
           </Link>
-          <div />
-          <div />
         </div>
       </div>
       <Outlet />

@@ -40,7 +40,7 @@ export default function Screenshots() {
   return (
     <div>
       {game.screenshots?.map((item) => (
-        <img src={item.image} style={{ width: "100px", height: "100px" }} />
+        <img src={item.image} style={{ width: "100%", height: "auto", borderRadius: '12px', margin: '1rem 0' }} />
       ))}
     </div>
   );

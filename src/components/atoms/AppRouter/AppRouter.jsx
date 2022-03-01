@@ -1,24 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import {
-  MdOutlineVideogameAsset,
-  MdLibraryBooks,
-  MdDashboard,
-  MdPerson,
-} from "react-icons/md";
+import { DashboardIcon, ExitIcon, PersonIcon, RocketIcon } from '@radix-ui/react-icons'
 
 import { supabase } from "../../../supabaseClient";
 import "./AppRouter.scss";
 import Overview from "../../organisms/Dashboard/Dashboard";
 import Games from "../../organisms/Games/Games";
-import News from "../../organisms/News/News";
 import Account from "../../molecules/Account/Account";
 import Game from "../../organisms/Games/Game/Game";
 import GameOverview from "../../organisms/Games/Game/GameOverview/GameOverview";
 import Screenshots from "../../organisms/Games/Game/Screenshots/Screenshots";
-import { LogoutIcon } from "@heroicons/react/outline";
-
-
 
 function AppRouter({ session }) {
   const [loading, setLoading] = useState(true);
@@ -67,8 +58,6 @@ function AppRouter({ session }) {
             <Route path="" element={<GameOverview />} />
             <Route path="screenshots" element={<Screenshots />} />
           </Route>
-
-          <Route path="news" element={<News />}></Route>
         </Routes>
       </div>
     </Router>
@@ -79,19 +68,13 @@ const links = [
   {
     id: "01",
     name: "Dashboard",
-    icon: MdDashboard,
+    icon: DashboardIcon,
     href: "/",
   },
   {
     id: "02",
-    name: "News",
-    icon: MdLibraryBooks,
-    href: "/news",
-  },
-  {
-    id: "03",
     name: "Games",
-    icon: MdOutlineVideogameAsset,
+    icon: RocketIcon,
     href: "/games",
   },
 ];
@@ -167,7 +150,7 @@ function SideNav({ url }) {
             link="/account"
             icon={
               !avatarUrl ? (
-                <MdPerson className="icon" />
+                <PersonIcon className="icon" />
               ) : (
                 <img
                   src={avatarUrl}
@@ -180,29 +163,37 @@ function SideNav({ url }) {
           <span>{username}</span>
         </div>
 
-        <div>
-          <ul className="app__sidenav-links">
-            {links.map((link, index) => (
-              <li key={index} className="app__sidenav-link">
-                <NavLink
-                  link={link.href}
-                  icon={<link.icon className="app__sidenav-link-icon" />}
-                  text={link.name}
-                  border={"0"}
-                />
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-between",
+            alignItems: "space-between",
+          }}
+        >
+          <div>
+            <ul className="app__sidenav-links">
+              {links.map((link, index) => (
+                <li key={index} className="app__sidenav-link">
+                  <NavLink
+                    link={link.href}
+                    icon={<link.icon className="app__sidenav-link-icon" />}
+                    text={link.name}
+                    border={"0"}
+                  />
+                </li>
+              ))}
+              <li>
+                <button
+                  className="app__sidenav-signout"
+                  onClick={() => supabase.auth.signOut()}
+                >
+                  <ExitIcon className="btn-icon" />
+                  <span style={{ marginLeft: "10px" }}>Logout</span>
+                </button>
               </li>
-            ))}
-          </ul>
-        </div>
-
-        <div className="app__sidenav-bottom">
-          <button
-            className="app__sidenav-signout"
-            onClick={() => supabase.auth.signOut()}
-          >
-            <LogoutIcon className="btn-icon" />
-            <span style={{ marginLeft: "10px" }}>Logout</span>
-          </button>
+            </ul>
+          </div>
         </div>
       </div>
     </nav>
